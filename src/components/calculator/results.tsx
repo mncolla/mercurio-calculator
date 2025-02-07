@@ -6,7 +6,7 @@ import ResultTabItem from "../ui/result-item"
 
 const ResultsStep = () => {
 
-    const { costoTransitorio, productWeight, reputation, gananciaEstimada, costoProductoBase } = useAppStore()
+    const { costoTransitorio, productWeight, gananciaEstimada, costoProductoBase } = useAppStore()
     const gSheetData = useGSheetData()
 
     console.log({gSheetData})
@@ -38,7 +38,7 @@ const ResultsStep = () => {
         const impuestosPercent = gSheetData.impuestos?.porcentajeImpuestos
         const planComun = gSheetData.porcentajeSegunPlanes?.planComun
 
-        if (!impuestosPercent || !planComun) return 0
+        if (!impuestosPercent || !planComun) return []
 
 
         const resultado = planComun.map(item => {

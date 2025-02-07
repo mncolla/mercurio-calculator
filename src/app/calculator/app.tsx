@@ -1,5 +1,4 @@
 import { useEffect } from "react"
-import Step1 from "../../components/calculator/step-1"
 import Navbar from "../../components/ui/navbar"
 import Form from "../../components/calculator/form"
 

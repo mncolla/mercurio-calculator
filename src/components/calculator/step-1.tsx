@@ -78,7 +78,7 @@ const Step1 = ({ setStep }: { setStep: (id: number) => void }) => {
                             type="number"
                             min={1}
                             max={999}
-                            placeholder="Agrega el % de ganancia estimado"
+                            placeholder="% de ganancia estimado"
                             className="w-full h-full pl-10 rounded-2xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                             {...register("revenuePercent")}
                         />

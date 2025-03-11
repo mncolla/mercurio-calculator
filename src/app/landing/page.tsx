@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router"
 import Navbar from "../../components/ui/navbar"
-import { Button } from "@headlessui/react"
 import Accordion from "../../components/ui/accordion"
+import Button from "../../components/ui/button"
 
 const ITEMS_HOW_TO_USE = [
   {
@@ -21,18 +21,13 @@ const ITEMS_HOW_TO_USE = [
   },
   {
     id: 4,
-    title: "Selección de donde se publica el producto",
-    description: "Elige si vas a vender en MercadoLibre, MercadoShop o en ambas plataformas. De esta manera, podremos sugerirte los tipos de operaciones disponibles, junto con los precios y comisiones correspondientes para cada canal de venta."
-  },
-  {
-    id: 5,
     title: "Peso del Producto",
     description: "Cuando el precio de tu producto supera un monto específico, el costo de envío es gratis para el comprador. Sin embargo, el costo será compartido entre el vendedor y MercadoLibre, dependiendo de las políticas vigentes."
   },
   {
-    id: 6,
+    id: 5,
     title: "Sugerencias de Precios",
-    description: "Al completar todos los datos que te solicitamos, te ayudaremos a calcular el precio de venta ideal para tus productos en MercadoLibre y MercadoShops. Tendremos en cuenta los costos de fabricación o compra, las comisiones por categoría, los gastos adicionales y cualquier promoción de envío gratis aplicable."
+    description: "Al completar todos los datos que te solicitamos, te ayudaremos a calcular el precio de venta ideal para tus productos en MercadoLibre. Tendremos en cuenta los costos de fabricación o compra, las comisiones por categoría, los gastos adicionales y cualquier promoción de envío gratis aplicable."
   }
 ]
 
@@ -71,7 +66,7 @@ const LandingPage = () => {
         <div className="flex justify-center relative ">
           <div className="hidden md:block absolute left-0 -z-10 top-0 rounded-r-full h-full bg-[#FFE600] w-full xl:w-[90%]"></div>
           <div className="w-full bg-[#FFE600] md:bg-transparent mt-5 py-12 relative flex flex-col md:flex-row-reverse md:items-center max-w-5xl">
-            <div className="max-w-1/2 flex flex-col items-center font-figtree text-[#003164]">
+            <div className="max-w-1/2 flex flex-col items-center font-figtree text-[#003164] mx-auto">
               <h4 className="text-pretty text-center text-3xl text-bold ">Te sugerimos el precio y el<br />tipo de operación a publicar</h4>
               <p className="text-center mt-5 max-w-[90%] font-light">Ingresa el costo de tu producto y cuánto deseas ganar, y nosotros te sugerimos el precio ideal para cada tipo de operación en MercadoLibre. </p>
             </div>
@@ -85,13 +80,6 @@ const LandingPage = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col items-center bg-[#FEFEFE] w-[260px] rounded-[5px] shadow-md">
-                <p className="flex w-full rounded-[5px] justify-center items-center h-[50px] text-white bg-[#3EB7FF]">Precio sugerido en MercadoShop</p>
-                <div className="flex flex-col h-[80px] justify-center items-center">
-                  <span>Precio de venta sugerido:</span>
-                  <span>$48.800</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -118,7 +106,7 @@ const LandingPage = () => {
       <section className="w-full flex flex-col items-center gap-y-16 font-figtree relative  my-16">
         <div className="w-full max-w-5xl">
           <h3 className="text-balance font-bold text-center text-[#2B3674] lg:text-left lg:ml-7 text-2xl md:text-3xl lg:text-4xl self-start mb-8">Preguntas Frecuentes </h3>
-          <Accordion title="¿Cuál es el beneficio de usar MercurioLabs?" description="MercurioLabs es una herramienta diseñada específicamente para vendedores y emprendedores que desean vender en MercadoLibre y MercadoShops sin perder dinero. Esta calculadora de precios te permite tener en cuenta todos los costos involucrados, desde el precio de compra o fabricación hasta las comisiones de la plataforma y los costos de envío, ayudándote a definir un precio de venta rentable y competitivo. Ideal para quienes quieren optimizar sus márgenes sin complicaciones." />
+          <Accordion title="¿Cuál es el beneficio de usar MercurioLabs?" description="MercurioLabs es una herramienta diseñada específicamente para vendedores y emprendedores que desean vender en MercadoLibre sin perder dinero. Esta calculadora de precios te permite tener en cuenta todos los costos involucrados, desde el precio de compra o fabricación hasta las comisiones de la plataforma y los costos de envío, ayudándote a definir un precio de venta rentable y competitivo. Ideal para quienes quieren optimizar sus márgenes sin complicaciones." />
           <Accordion title="¿El precio sugerido es exacto?" description="Esta calculadora es una versión beta que se basa en los datos actualizados de costos de MercadoLibre. Si bien se tienen en cuenta muchas variables, el precio que te ofrece es solo una sugerencia. Te recomendamos validarlo con el simulador de precios de MercadoLibre para asegurarte de que se ajuste a tu estrategia de venta y a las condiciones del mercado." />
           <Accordion title="¿Por qué usar esta calculadora y no el simulador de MercadoLibre?" description="El simulador de costos de MercadoLibre es una excelente herramienta para entender las comisiones y calcular tus ganancias. Sin embargo, nuestra calculadora te permite establecer el precio de venta desde cero, utilizando los datos que ya conoces sobre tu producto, como costos de fabricación, gastos adicionales y margen de ganancia. Ambas herramientas son complementarias: el simulador te ayuda a conocer el impacto de las comisiones, mientras que nuestra calculadora te guía para fijar un precio competitivo y rentable desde el principio." />
         </div>

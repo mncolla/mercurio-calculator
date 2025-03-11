@@ -1,8 +1,8 @@
 import { PropsWithChildren } from "react"
 
-const Button = ({ children, className, ...props }: PropsWithChildren & { className?: string }) => {
+const Button = ({ children, className, onClick, ...props }: PropsWithChildren & { className?: string, onClick?: () => void }) => {
     return (
-        <button className={"bg-[#2B3674] rounded-2xl py-3 text-white cursor-pointer " + className} {...props}>
+        <button onClick={onClick} className={"bg-[#2B3674] rounded-2xl py-3 text-white cursor-pointer " + className} {...props}>
             {children}
         </button>
     )

@@ -38,7 +38,7 @@ const Step1 = ({ setStep }: { setStep: (id: number) => void }) => {
         console.log("product cost", productCost)
         setCostoProductoBase(productCost)
         setGananciaEstimada(data.revenuePercent)
-        setStep(1)
+        setStep(2)
     }
 
     return (

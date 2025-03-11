@@ -6,6 +6,7 @@ import Steps from "../ui/steps";
 import Button from "../ui/button";
 import { useState } from "react";
 import { useAppStore } from "../../lib/store";
+import getPorcentajeEnvioSegunReputacion from "../../services/getPorcentajeEnvioSegunReputacion";
 
 const schema = Yup.object().shape({
     productCost: Yup
@@ -25,20 +26,29 @@ const Step1 = ({ setStep }: { setStep: (id: number) => void }) => {
     const setCostoTransitorio = useAppStore(state => state.setCostoTransitorio)
     const setGananciaEstimada = useAppStore(state => state.setGananciaEstimada)
 
+    
+
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
     });
 
     const [productCost, setProductCost] = useState(0)
 
-    const handleSubmitStep = (data: any) => {
+    const handleSubmitStep = async (data: any) => {
+
+        const { baseCost } = await getPorcentajeEnvioSegunReputacion()
+
         const costoTransitorio = productCost + (productCost * (data.revenuePercent / 100));
         setCostoTransitorio(costoTransitorio)
 
-        console.log("product cost", productCost)
         setCostoProductoBase(productCost)
         setGananciaEstimada(data.revenuePercent)
-        setStep(2)
+
+        if (baseCost < productCost) {
+            setStep(1)
+        } else {
+            setStep(2)
+        }
     }
 
     return (

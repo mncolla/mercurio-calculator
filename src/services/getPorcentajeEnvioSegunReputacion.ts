@@ -14,6 +14,9 @@ export default async function getPorcentajeEnvioSegunReputacion(){
         return acc;
     }, {});
 
+    console.log("desc", descuentoPorReputacion)
+    console.log("baseCost", baseCost)
+
     return {
         descuentoPorReputacion,
         baseCost
